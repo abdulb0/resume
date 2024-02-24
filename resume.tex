@@ -1,0 +1,184 @@
+%-------------------------
+% SWE Resume in Latex
+% Author : Abdul Basit
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% CUSTOM COMMANDS START
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[1]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{#1} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% CUSTOM COMMANDS END
+%----------------------
+
+
+%-------------------------------------------
+% DOCUMENT START
+\begin{document}
+
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Large \scshape Abdul Basit} \\ \vspace{1pt}
+    571-420-0910 $|$ \href{mailto:abasit1w@gmail.com}{\underline{abasit1w@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/abdulbasit0}{\underline{linkedin.com/in/abdulbasit0}}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Appian Corporation}{July 2021 -- Present}
+      \resumeSubSubheading
+        {Software Engineer II}
+        \resumeItemListStart
+          \resumeItem{Developed Kubernetes service to allow for real-time streaming of customer logs from AWS EKS cluster nodes to customer rsyslog receivers with TLS encryption over the public internet, AWS Private Link, and VPN tunnels}
+          \resumeItem{Created GitLab CI/CD pipelines utilizing Terraform to perform infrastructure provisioning in AWS GovCloud environment for FedRAMP customers}
+          \resumeItem{Created GitLab CI/CD pipeline utilizing Cloud Custodian to perform AWS EBS snapshot and AWS Secrets Manager secret cleanup, reducing monthly AWS bill by over \$50K}
+          \resumeItem{Updated custom Kubernetes Operator to support infrastructure provisioning in AWS GovCloud environment using FedRAMP compliant FIPS endpoints}
+          \resumeItem{Updated EBS snapshot auditing feature to audit snapshots for customer servers in AWS GovCloud environment}
+        \resumeItemListEnd
+      \resumeSubSubheading
+        {Software Engineer}
+        \resumeItemListStart
+          \resumeItem{Developed feature to allow support team to quickly schedule maintenance windows for customers, reducing scheduling time for monthly FedRAMP customer patching from 4 hours to 30 minutes}
+          \resumeItem{Developed feature to allow risk adverse customers utilizing Appian's cloud offering to remain on older hotfixes of the product, reducing hotfix related incidents for these customers by up to 80\%}
+          \resumeItem{Developed feature allowing support team to perform AWS EBS volume modifications for customer servers from internal support site, removing dependency on authorized personnel to perform actions in the AWS console}
+          \resumeItem{Served as a technical mentor for 2022 summer intern, leading design and implementation reviews for intern project}
+        \resumeItemListEnd
+    \resumeSubheading
+      {Clear Cloud}{August 2020 -- January 2021}
+      \resumeSubSubheading
+        {Software Engineer Intern}
+        \resumeItemListStart
+          \resumeItem{Developed microservice web application to help government contractors find work opportunities}
+          \resumeItem{Implemented REST API for querying documents in Elasticsearch index on multiple fields}
+          \resumeItem{Created feature to allow users to save, update, retrieve, and delete previously made searches via API invocation}
+          \resumeItem{Created feature to change watch status of saved searched, triggering publishing of AWS Eventbridge event}
+          \resumeItem{Deployed APIs using Serverless Framework, AWS API Gateway, and AWS Lambda}
+          \resumeItem{Wrote unit and integration tests, achieving over 90\% coverage of statements in project repository}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Fake News Classifier} $|$ \emph{Python, Docker}}{November 2020 -- December 2020}
+          \resumeItemListStart
+            \resumeItem{Developed program to classify fake and real news articles using data sets sourced from Kaggle}
+            \resumeItem{Built prediction models using multiple supervised machine learning classification algorithms}
+            \resumeItem{Performed pre-processing, feature engineering, and transformation into TF-IDF representation on data sets}
+            \resumeItem{Conducted cross-validation achieving over 80\% prediction accuracy on validation set}
+            \resumeItem{Ran program in bare-bones container using Docker}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python, Go, Node.js, C, SQL} \\
+     \textbf{Tools}{: Git, AWS, Bash, Linux, GitLab CI/CD, Terraform, Docker, Kubernetes, Helm, Argo CD, Elasticsearch} \\
+     \textbf{Frameworks}{: JUnit, Operator SDK, Express} \\
+     \textbf{Certifications}{: AWS Certified Developer, LPI Linux Essentials} \\
+    }}
+ \end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {George Mason University}{August 2017 -- May 2021}
+      \resumeSubSubheading
+        {Bachelor of Science in Computer Science}
+        \resumeItemListStart
+          \resumeItem{GPA: 3.66}
+          \resumeItem{Coursework: Data Structures, Algorithms, Operating Systems, Databases, Computer Networking, Data Mining, Artificial Intelligence, Software Testing, Web Application Development, Computer Graphics}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+\end{document}
+% DOCUMENT END
+%-------------------------------------------
+
